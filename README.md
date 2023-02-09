@@ -1,6 +1,6 @@
 # @dmtkpv/ssr
 Server Side Rendering for Vite + Vue.  
-Works with [`vue-router`](https://github.com/vuejs/router) and [`@vueuse/head`](https://github.com/vueuse/head).
+Compatible with [`vue-router`](https://github.com/vuejs/router) and [`@vueuse/head`](https://github.com/vueuse/head).
 
 ## Installation
 ```shell
@@ -33,15 +33,24 @@ In your main entry
 ```js
 import createApp from '@dmtkpv/ssr/createApp'
 
-export default () => {
-    return createApp(App).mount('body');
-}
+export default createApp(App, app => {
+    app.mount('body');
+})
 ```
 
 Run the server
 ```shell
 node server
 ```
+
+## Examples
+
+### State
+### vue-router
+### @vueuse/head
+
+
+
 
 
 
