@@ -1,0 +1,30 @@
+{
+  "name": "@dmtkpv/ssr",
+  "version": "0.0.1",
+  "scripts": {
+    "serve": "pnpm -C example run serve"
+  },
+  "dependencies": {
+    "jsdom": "^21.1.0"
+  },
+  "peerDependencies": {
+    "@vueuse/head": "^1.0.24",
+    "express": "^4.18.2",
+    "vite": "^4.1.1",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
+  },
+  "peerDependenciesMeta": {
+    "@vueuse/head": {
+      "optional": true
+    },
+    "vue-router": {
+      "optional": true
+    }
+  },
+  "exports": {
+    "./createApp": "./lib/createApp.mjs",
+    "./createRouter": "./lib/createRouter.mjs",
+    "./createSSR": "./lib/createSSR.js"
+  }
+}
