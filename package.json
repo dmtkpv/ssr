@@ -1,5 +1,6 @@
 {
   "name": "@dmtkpv/ssr",
+  "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "pnpm -C example run dev",
@@ -24,8 +25,8 @@
     }
   },
   "exports": {
-    "./createApp": "./lib/createApp.mjs",
-    "./createRouter": "./lib/createRouter.mjs",
-    "./createSSR": "./lib/createSSR.mjs"
+    "./createApp": "./lib/createApp.js",
+    "./createRouter": "./lib/createRouter.js",
+    "./createSSR": "./lib/createSSR.js"
   }
 }
