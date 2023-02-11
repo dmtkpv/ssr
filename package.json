@@ -26,6 +26,6 @@
   "exports": {
     "./createApp": "./lib/createApp.mjs",
     "./createRouter": "./lib/createRouter.mjs",
-    "./createSSR": "./lib/createSSR.js"
+    "./createSSR": "./lib/createSSR.mjs"
   }
 }

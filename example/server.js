@@ -1,5 +1,5 @@
-const express = require('express');
-const createSSR = require('@dmtkpv/ssr/createSSR');
+import express from 'express';
+import createSSR from '@dmtkpv/ssr/createSSR';
 
 (async () => {
 
