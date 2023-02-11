@@ -54,7 +54,11 @@ NODE_ENV=production node server
 
 ## Examples
 
+
 ### Initial state
+The initial state is the application data that is serialized as part of the server-rendered HTML for later hydration in the browser. This data is normally gathered using fetch or DB requests from your API code.
+
+The initial state is a plain JS object that is passed to your application and can be modified at will during SSR. This object will be serialized and later hydrated automatically in the browser, and passed to your app again so you can use it as a data source.
 ```js
 import createApp from '@dmtkpv/ssr/createApp'
 
@@ -66,9 +70,7 @@ export default createApp(App, (app, state) => {
 ```
 
 
-
-### [`vue-router`](https://github.com/vuejs/router)
-
+### vue-router
 ```js
 import createApp from '@dmtkpv/ssr/createApp'
 import createRouter from '@dmtkpv/ssr/createRouter'
@@ -81,10 +83,7 @@ export default createApp(App, app => {
 ```
 
 
-
-
-### [`@vueuse/head`](https://github.com/vueuse/head)
-
+### @vueuse/head
 ```js
 import createApp from '@dmtkpv/ssr/createApp'
 import { createHead } from '@vueuse/head'

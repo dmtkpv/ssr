@@ -28,5 +28,8 @@
     "./createApp": "./lib/createApp.js",
     "./createRouter": "./lib/createRouter.js",
     "./createSSR": "./lib/createSSR.js"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }
