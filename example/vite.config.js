@@ -4,6 +4,10 @@ export default {
 
     plugins: [
         vue()
-    ]
+    ],
+
+    optimizeDeps: {
+        force: true
+    }
 
 }

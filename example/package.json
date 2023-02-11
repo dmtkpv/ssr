@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "serve": "node server",
-    "build": "vite build"
+    "dev": "node server",
+    "prod": "NODE_ENV=production node server"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

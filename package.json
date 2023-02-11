@@ -2,7 +2,8 @@
   "name": "@dmtkpv/ssr",
   "version": "0.0.1",
   "scripts": {
-    "serve": "pnpm -C example run serve"
+    "dev": "pnpm -C example run dev",
+    "prod": "pnpm -C example run prod"
   },
   "dependencies": {
     "jsdom": "^21.1.0"
