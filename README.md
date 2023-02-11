@@ -11,8 +11,8 @@ npm i @dmtkpv/ssr
 
 Create `server.js`
 ```js
-const express = require('express');
-const createSSR = require('@dmtkpv/ssr/createSSR');
+import express from 'express';
+import createSSR from '@dmtkpv/ssr/createSSR';
 
 (async () => {
 
@@ -20,7 +20,11 @@ const createSSR = require('@dmtkpv/ssr/createSSR');
     const app = express();
     const ssr = await createSSR();
 
-    app.use(ssr);
+    app.use(ssr.middlewares);
+
+    app.get('/*', (req, res, next) => {
+        ssr.render(req.url).then(html => res.send(html)).catch(next)
+    })
 
     app.listen(port, () => {
         console.log(`http://localhost:${port}`)
@@ -38,16 +42,59 @@ export default createApp(App, app => {
 })
 ```
 
-Run the server
+Run dev server
 ```shell
 node server
 ```
 
+Run production server
+```shell
+NODE_ENV=production node server
+```
+
 ## Examples
 
-### State
-### vue-router
-### @vueuse/head
+### Initial state
+```js
+import createApp from '@dmtkpv/ssr/createApp'
+
+export default createApp(App, (app, state) => {
+    if (import.meta.env.SSR) state.foo = 'bar'
+    else console.log(state.foo) // => 'bar'
+    app.mount('body');
+})
+```
+
+
+
+### [`vue-router`](https://github.com/vuejs/router)
+
+```js
+import createApp from '@dmtkpv/ssr/createApp'
+import createRouter from '@dmtkpv/ssr/createRouter'
+
+export default createApp(App, app => {
+    const router = createRouter({ routes });
+    app.use(router);
+    app.mount('body');
+})
+```
+
+
+
+
+### [`@vueuse/head`](https://github.com/vueuse/head)
+
+```js
+import createApp from '@dmtkpv/ssr/createApp'
+import { createHead } from '@vueuse/head'
+
+export default createApp(Root, (app, state) => {
+    const head = createHead();
+    app.use(head);
+    app.mount('body');
+})
+```
 
 
 
