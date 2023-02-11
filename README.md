@@ -23,7 +23,7 @@ import createSSR from '@dmtkpv/ssr/createSSR';
     app.use(ssr.middlewares);
 
     app.get('/*', (req, res, next) => {
-        ssr.render(req.url).then(html => res.send(html)).catch(next)
+        ssr.render(req.originalUrl).then(html => res.send(html)).catch(next)
     })
 
     app.listen(port, () => {
