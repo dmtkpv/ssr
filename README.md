@@ -83,19 +83,6 @@ export default createApp(App, app => {
 ```
 
 
-### @vueuse/head
-```js
-import createApp from '@dmtkpv/ssr/createApp'
-import { createHead } from '@vueuse/head'
-
-export default createApp(Root, (app, state) => {
-    const head = createHead();
-    app.use(head);
-    app.mount('body');
-})
-```
-
-
 
 
 
