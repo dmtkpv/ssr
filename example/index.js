@@ -79,6 +79,8 @@ function fetch () {
 
 export default createApp(Root, (app, state) => {
 
+    console.log(state);
+
     const head = createHead();
     const routes = createRoutes(state);
     const router = createRouter({ routes });
