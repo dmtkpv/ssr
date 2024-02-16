@@ -1,6 +1,6 @@
 {
   "name": "@dmtkpv/ssr",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "type": "module",
   "scripts": {
     "dev": "pnpm -C example run dev",
@@ -10,11 +10,11 @@
     "jsdom": "^21.1.0"
   },
   "peerDependencies": {
-    "@vueuse/head": "^1.0.24",
-    "express": "^4.18.2",
-    "vite": "^4.1.1",
-    "vue": "^3.2.47",
-    "vue-router": "^4.1.6"
+    "@vueuse/head": "1",
+    "express": "4",
+    "vite": "4 - 5",
+    "vue": "3",
+    "vue-router": "4"
   },
   "peerDependenciesMeta": {
     "@vueuse/head": {
